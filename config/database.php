@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'sqlsrv'),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,8 +78,8 @@ return [
             'sslmode' => 'prefer',
         ],
 
-        'sqlsrv1' => [
-            'driver' => env('DB_CONNECTION_PLM'),
+        'sqlsrv' => [
+            'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '1433'),
@@ -90,7 +90,19 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-        'sqlsrv2' => [
+        'plm' => [
+            'driver' => env('DB_CONNECTION_PLM'),
+            'url' => env('DATABASE_URL_PLM'),
+            'host' => env('DB_HOST_PLM'),
+            'port' => env('DB_PORT_PLM'),
+            'database' => env('DB_DATABASE_PLM'),
+            'username' => env('DB_USERNAME_PLM'),
+            'password' => env('DB_PASSWORD_PLM'),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+        ],
+        'ets' => [
             'driver' => env('DB_CONNECTION_ETS'),
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'localhost'),
@@ -102,14 +114,14 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-        'sqlsrv3' => [
+        'erp' => [
             'driver' => env('DB_CONNECTION_ERP'),
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'url' => env('DATABASE_URL_ERP'),
+            'host' => env('DB_HOST_ERP', 'localhost'),
+            'port' => env('DB_PORT_ERP', '1433'),
+            'database' => env('DB_DATABASE_ERP', 'forge'),
+            'username' => env('DB_USERNAME_ERP', 'forge'),
+            'password' => env('DB_PASSWORD_ERP', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
